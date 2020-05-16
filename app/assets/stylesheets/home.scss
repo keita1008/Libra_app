@@ -1,0 +1,34 @@
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+.top-main{
+  width: 100%;
+  height: 650px;
+  background-image: url(mv.png);
+  background-size: cover;
+  background-position: center;
+  font-size: 40px;
+}
+
+.top-message{
+  padding-top: 100px;
+  text-align: center;
+  color: #FAFAFA;
+}
+
+.about-main{
+  width: 100%;
+  height: 650px;
+  background-image: url(code.png);
+  background-size: cover;
+  background-position: center;
+  font-size: 40px;
+}
+
+.about-message{
+  padding-top: 100px;
+  text-align: center;
+  color: #FAFAFA;
+}
+
+
