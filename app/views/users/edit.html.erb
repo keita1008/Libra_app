@@ -1,0 +1,32 @@
+<div class="main users-edit">
+  <div class="container mt-5">
+    <h1 class="form-heading mb-5">ユーザー情報の編集</h1>
+    <div class="form users-form">
+      <div class="form-body">
+        <% if @error_message %>
+          <div class="form-error text-danger">
+            <%= @error_message %>
+          </div>
+        <% end %>
+        <%= form_tag("/users/#{@user.id}/update", {multipart: true}) do %>
+          <p class="mt-5">ユーザー名</p>
+          <div class="input-group mb-5">
+            <input class="form-control" name="name" value="<%= @user.name %>">
+          </div>
+          <p>画像</p>
+          <div class="input-group mb-5">
+            <input name="image" type="file" class="form-control-file">
+          </div>
+          <p>メールアドレス</p>
+          <div class="input-group mb-5">
+            <div class="input-group-prepend">
+              <span class="input-group-text">✉</span>
+            </div>
+            <input type="text" class="form-control" name="email" value="<%= @user.email %>">
+          </div>
+          <input type="submit" class="btn btn-dark" value="保存">
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

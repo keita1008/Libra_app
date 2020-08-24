@@ -1,1 +1,19 @@
-<h1>投稿一覧</h1>
+<div class="main posts-index">
+  <div class="container mt-5">
+    <h1 class="mb-5">投稿一覧</h1>
+    <% @books.each do |book| %>
+      <div class="posts-index-item">
+        <div class="post-left">
+          <img src="<%= "/user_images/#{book.user.image_name}" %>">
+        </div>
+        <div class="post-right">
+          <div class="post-user-name">
+            <%= link_to(book.user.name, "/users/#{book.user.id}") %>
+          </div>
+          <%= link_to(book.title, "/posts/#{book.id}") %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+

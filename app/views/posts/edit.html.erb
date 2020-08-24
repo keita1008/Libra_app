@@ -1,24 +1,23 @@
 <div class="main posts-new">
   <div class="container mt-5">
-    <h1 class="form-heading mb-5">新規投稿</h1>
-    <%= form_tag("/posts/create") do %>
+    <h1>編集する</h1>
+    <%= form_tag("/posts/#{@book.id}/update") do %>
       <div class="form">
         <div class="form-body">
-          <% if @error_message %>
+          <% @book.errors.full_messages.each do |message| %>
             <div class="form-error text-danger">
-              <%= @error_message %>
+              <%= message %>
             </div>
           <% end %>
           <p class="mt-5">タイトル</p>
           <div class="input-group mb-5">
-            <input class="form-control" name="title"><%= @book.title %>
+            <input class="form-control" name="title" value="<%= @book.title %>">
           </div>
           <p>感想</p>
           <textarea class="form-control mb-4" name="content"><%= @book.content %></textarea>
-          <button type="submit" class="btn btn-dark">投稿</button>
+          <input type="submit" class="btn btn-dark" value="保存">
         </div>
       </div>
     <% end %>
   </div>
 </div>
-

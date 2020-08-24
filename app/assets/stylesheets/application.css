@@ -12,14 +12,19 @@
  *
  *= require_tree .
  *= require_self
+ *= require bootstrap/dist/css/bootstrap.min.css
  */
 body{
     margin: 0;
 }
 
-header{
-    width: 100%;
-    height: 70px;
+/*header{*/
+/*    width: 100%;*/
+/*    height: 70px;*/
+/*    background-color: #EC715F;*/
+/*}*/
+
+.navbar{
     background-color: #EC715F;
 }
 
@@ -40,18 +45,4 @@ header{
 
 .nav-list:hover{
     opacity: 0.8;
-}
-
-footer{
-    width: 100%;
-    height: 110px;
-    background-color: aliceblue;
-    position: absolute;
-    bottom: 0;
-}
-
-.copyright{
-    text-align: center;
-    padding-top: 35px;
-    font-size: 20px;
 }

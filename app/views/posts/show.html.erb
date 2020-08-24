@@ -1,0 +1,40 @@
+<div class="main posts-show">
+  <div class="container mt-5">
+    <div class="posts-show-item">
+      <div class="post-user-name">
+        <img src="<%= "/user_images/#{@user.image_name}" %>">
+        <%= link_to(@user.name, "/users/#{@user.id}") %>
+      </div>
+      <p>
+      <h2>タイトル</h2>
+        <%= @book.title %>
+      </p>
+      <p>
+      <h2>感想</h2>
+        <%= @book.content %>
+      </p>
+      <div class="post-time">
+        <%= @book.created_at.strftime('%Y/%m/%d') %>
+      </div>
+
+      <% if Like.find_by(user_id: @current_user.id, book_id: @book.id) %>
+        <%= link_to("/likes/#{@book.id}/destroy", {method: "post"}) do %>
+          <span class="fa fa-heart like-btn-unlike"></span>
+        <% end %>
+      <% else %>
+        <%= link_to("/likes/#{@book.id}/create", {method: "post"}) do %>
+          <span class="fa fa-heart like-btn"></span>
+        <% end %>
+      <% end %>
+
+      <%= @like_count %>
+
+      <% if @book.user_id == @current_user.id %>
+        <div class="post-menus">
+          <%= link_to("編集", "/posts/#{@book.id}/edit") %>
+          <%= link_to("削除", "/posts/#{@book.id}/destroy", {method: "post"}) %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
