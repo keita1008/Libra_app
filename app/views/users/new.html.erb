@@ -1,32 +1,58 @@
 <div class="main users-new">
   <div class="container mt-5">
-    <h1 class="form-heading mb-5">新規ユーザー登録</h1>
     <div class="form users-form">
-      <div class="form-body">
-        <% if @error_message %>
-          <div class="form-error text-danger">
-            <%= @error_message %>
-          </div>
-        <% end %>
-        <%= form_tag("/users/create") do %>
-          <p class="mt-5">ユーザー名</p>
-          <div class="input-group mb-5">
-            <input class="form-control" name="name" value="<%= @user.name %>">
-          </div>
-          <p>メールアドレス</p>
-          <div class="input-group mb-5">
-            <div class="input-group-prepend">
-              <span class="input-group-text">✉</span>
+      <div class="card card-container">
+        <h3 class="mb-4">新規登録</h3>
+        <div class="form-body">
+          <% if @error_message %>
+            <div class="form-error text-danger mb-4">
+              <%= @error_message %>
             </div>
-            <input type="text" class="form-control" name="email" value="<%= @user.email %>">
-          </div>
-          <p>パスワード</p>
-          <div class="input-group mb-5">
-            <input type="password" class="form-control" name="password" value="<%= @user.password %>">
-          </div>
-          <button type="submit" class="btn btn-dark">新規登録</button>
-        <% end %>
+          <% end %>
+          <%= form_tag("/users/create") do %>
+            <img id="profile-img" class="profile-img-card" src="//ssl.gstatic.com/accounts/ui/avatar_2x.png" />
+            <p id="profile-name" class="profile-name-card"></p>
+            <form class="form-signin">
+              <span id="reauth-email" class="reauth-email"></span>
+              <input type="username" id="inputUsername" class="form-control mb-4" placeholder="ユーザー名" name="name" value="<%= @user.name %>" required autofocus>
+              <input type="email" id="inputEmail" class="form-control mb-4" placeholder="メールアドレス" name="email" value="<%= @user.email %>" required>
+              <input type="password" id="inputPassword" class="form-control mb-4" placeholder="パスワード" name="password" value="<%= @user.password %>" required>
+              <button class="btn btn-lg btn-dark btn-block btn-signin" type="submit">新規登録</button>
+            </form>
+          <% end %>
+        </div>
       </div>
+
+
+
+<!--      <div class="form-body">-->
+        <%# if @error_message %>
+<!--          <div class="form-error text-danger">-->
+            <%#= @error_message %>
+<!--          </div>-->
+        <%# end %>
+        <%#= form_tag("/users/create") do %>
+<!--          <p class="mt-5">ユーザー名</p>-->
+<!--          <div class="input-group mb-5">-->
+<!--            <input class="form-control" name="name" value="<%#= @user.name %>">-->
+<!--          </div>-->
+<!--          <p>メールアドレス</p>-->
+<!--          <div class="input-group mb-5">-->
+<!--            <div class="input-group-prepend">-->
+<!--              <span class="input-group-text">✉</span>-->
+<!--            </div>-->
+<!--            <input type="text" class="form-control" name="email" value="<%#= @user.email %>">-->
+<!--          </div>-->
+<!--          <p>パスワード</p>-->
+<!--          <div class="input-group mb-5">-->
+<!--            <input type="password" class="form-control" name="password" value="<%#= @user.password %>">-->
+<!--          </div>-->
+<!--          <button type="submit" class="btn btn-dark">新規登録</button>-->
+        <%# end %>
+<!--      </div>-->
+
+
+
     </div>
   </div>
 </div>
