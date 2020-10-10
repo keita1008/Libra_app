@@ -3,14 +3,14 @@
     <div class="posts-show-item">
       <div class="post-user-name">
         <img src="<%= "/user_images/#{@user.image_name}" %>">
-        <%= link_to(@user.name, "/users/#{@user.id}") %>
+        <%= link_to(@user.name, "/users/#{@user.id}", class:"no-underline") %>
       </div>
       <p>
-      <h2>タイトル</h2>
+      <h4 class="title">タイトル</h4>
         <%= @book.title %>
       </p>
       <p>
-      <h2>感想</h2>
+      <h4 class="title">感想</h4>
         <%= @book.content %>
       </p>
       <div class="post-time">
@@ -18,11 +18,11 @@
       </div>
 
       <% if Like.find_by(user_id: @current_user.id, book_id: @book.id) %>
-        <%= link_to("/likes/#{@book.id}/destroy", {method: "post"}) do %>
+        <%= link_to("/likes/#{@book.id}/destroy", method: "post", class:"no-underline") do %>
           <span class="fa fa-heart like-btn-unlike"></span>
         <% end %>
       <% else %>
-        <%= link_to("/likes/#{@book.id}/create", {method: "post"}) do %>
+        <%= link_to("/likes/#{@book.id}/create", method: "post", class:"no-underline") do %>
           <span class="fa fa-heart like-btn"></span>
         <% end %>
       <% end %>
@@ -31,8 +31,8 @@
 
       <% if @book.user_id == @current_user.id %>
         <div class="post-menus">
-          <%= link_to("編集", "/posts/#{@book.id}/edit") %>
-          <%= link_to("削除", "/posts/#{@book.id}/destroy", {method: "post"}) %>
+          <%= link_to("編集", "/posts/#{@book.id}/edit", class:"no-underline") %>
+          <%= link_to("削除", "/posts/#{@book.id}/destroy", method: "post", class:"no-underline") %>
         </div>
       <% end %>
     </div>

@@ -6,14 +6,14 @@
       <p><%= @user.email %></p>
       <div class="text-center">
         <% if @user.id == @current_user.id %>
-          <%= link_to("編集", "/users/#{@user.id}/edit") %>
+          <%= link_to("編集", "/users/#{@user.id}/edit", class:"no-underline") %>
         <% end %>
       </div>
     </div>
 
     <ul class="user-tabs">
-      <li class="active"><%= link_to("投稿", "/users/#{@user.id}") %></li>
-      <li><%= link_to("いいね!", "/users/#{@user.id}/likes") %></li>
+      <li class="active"><%= link_to("投稿", "/users/#{@user.id}", class:"no-underline") %></li>
+      <li class=><%= link_to("いいね!", "/users/#{@user.id}/likes", class:"no-underline") %></li>
     </ul>
 
     <% @user.books.each do |book| %>
@@ -23,9 +23,9 @@
         </div>
         <div class="post-right">
           <div class="post-user-name">
-            <%= link_to(book.user.name, "/users/#{book.user.id}") %>
+            <%= link_to(book.user.name, "/users/#{book.user.id}", class:"no-underline") %>
           </div>
-          <%= link_to(book.title, "/posts/#{book.id}") %>
+          <%= link_to(book.title, "/posts/#{book.id}", class:"no-underline") %>
         </div>
       </div>
     <% end %>

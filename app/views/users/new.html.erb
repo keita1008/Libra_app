@@ -2,7 +2,7 @@
   <div class="container mt-5">
     <div class="form users-form">
       <div class="card card-container">
-        <h3 class="mb-4">新規登録</h3>
+        <h3 class="title mb-4">新規登録</h3>
         <div class="form-body">
           <% if @error_message %>
             <div class="form-error text-danger mb-4">
@@ -22,37 +22,6 @@
           <% end %>
         </div>
       </div>
-
-
-
-<!--      <div class="form-body">-->
-        <%# if @error_message %>
-<!--          <div class="form-error text-danger">-->
-            <%#= @error_message %>
-<!--          </div>-->
-        <%# end %>
-        <%#= form_tag("/users/create") do %>
-<!--          <p class="mt-5">ユーザー名</p>-->
-<!--          <div class="input-group mb-5">-->
-<!--            <input class="form-control" name="name" value="<%#= @user.name %>">-->
-<!--          </div>-->
-<!--          <p>メールアドレス</p>-->
-<!--          <div class="input-group mb-5">-->
-<!--            <div class="input-group-prepend">-->
-<!--              <span class="input-group-text">✉</span>-->
-<!--            </div>-->
-<!--            <input type="text" class="form-control" name="email" value="<%#= @user.email %>">-->
-<!--          </div>-->
-<!--          <p>パスワード</p>-->
-<!--          <div class="input-group mb-5">-->
-<!--            <input type="password" class="form-control" name="password" value="<%#= @user.password %>">-->
-<!--          </div>-->
-<!--          <button type="submit" class="btn btn-dark">新規登録</button>-->
-        <%# end %>
-<!--      </div>-->
-
-
-
     </div>
   </div>
 </div>

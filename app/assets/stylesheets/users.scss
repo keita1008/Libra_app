@@ -41,6 +41,7 @@
 
 .user-right {
   width: 90%;
+  font-weight: 600;
   padding-left: 25px;
   text-align: left;
   display: table-cell;
@@ -98,6 +99,10 @@
 
 .user-tabs li {
   float: left;
+}
+
+.user-tabs:hover{
+  text-decoration: none;
 }
 
 .user-tabs li.active {

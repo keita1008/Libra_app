@@ -1,35 +1,34 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
-//.top-main{
-//  width: 100%;
-//  height: 650px;
-//  background-image: url(mv.png);
-//  background-size: cover;
-//  background-position: center;
-//  font-size: 40px;
-//}
-//
-//.top-message{
-//  padding-top: 100px;
-//  text-align: center;
-//  color: #FAFAFA;
-//}
-//
-//.about-main{
-//  width: 100%;
-//  height: 650px;
-//  background-image: url(code.png);
-//  background-size: cover;
-//  background-position: center;
-//  font-size: 40px;
-//}
-//
-//.about-message{
-//  padding-top: 100px;
-//  text-align: center;
-//  color: #FAFAFA;
-//}
+.top-main{
+  width: 100%;
+  height: 650px;
+  background-image: url(mv.png);
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  font-size: 40px;
+}
+
+@import url('https://fonts.googleapis.com/css?family=M+PLUS+1p');
+
+.top-message{
+  padding-top: 250px;
+  text-align: center;
+  color: #FAFAFA;
+  font-family: 'M PLUS 1p', sans-serif;
+}
+
+.title{
+  font-family: 'M PLUS 1p', sans-serif;
+}
+
+.no-underline{
+  text-decoration:none !important;
+}
+
 .flash {
   padding: 10px;
   color: white;
@@ -43,7 +42,7 @@
 }
 
 .custom-hamburger .navbar-toggler-icon{
-  　　　　background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='white' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='white' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
 }
 
 
